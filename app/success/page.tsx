@@ -51,7 +51,7 @@ export default function SuccessPage() {
             priority
           />
           
-          <AuroraText className="text-3xl font-bold mb-6">
+          <AuroraText className="text-3xl font-bold mb-6 text-white">
             Bingo ! Marou chandou ✨
           </AuroraText>
 

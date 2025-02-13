@@ -130,7 +130,7 @@ export default function Surprise2Page() {
         className="relative z-10"
       >
         <LetterContainer>
-          <AuroraText className="text-2xl font-bold mb-8">
+          <AuroraText className="text-2xl font-bold mb-8 text-white">
             ✨ Une Lettre Pour Toi ! ✨
           </AuroraText>
 

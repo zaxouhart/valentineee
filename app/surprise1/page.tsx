@@ -56,7 +56,7 @@ export default function Surprise1Page() {
         className="relative z-10"
       >
         <GiftContainer>
-          <AuroraText className="text-2xl font-bold mb-8">
+          <AuroraText className="text-2xl font-bold mb-8 text-white">
             ✨ Ta Carte Cadeau Amazon ! ✨
           </AuroraText>
 

@@ -45,7 +45,7 @@ export default function VerificationPage() {
     e.preventDefault();
     const fullPassword = password.join('');
     if (fullPassword.toLowerCase() === 'chandou') {
-      router.push('/success');
+      handleSuccess();
     } else {
       const errorSound = new Audio('/error.mp3');
       errorSound.volume = 1.0;
@@ -70,6 +70,36 @@ export default function VerificationPage() {
         console.error('Erreur lors de la lecture du son:', error);
       }
     }
+  };
+
+  const handleSuccess = () => {
+    // Jouer un son de succès
+    const successSound = new Audio('/success-chime.wav');
+    successSound.play();
+
+    // Effet de glitch sur l'écran
+    document.documentElement.classList.add('glitch-success');
+
+    // Animation de cœurs qui explosent
+    const hearts = Array.from({ length: 50 }).map(() => {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.className = 'floating-heart';
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.animationDuration = `${1 + Math.random() * 2}s`;
+      heart.style.animationDelay = `${Math.random() * 0.5}s`;
+      return heart;
+    });
+
+    const container = document.createElement('div');
+    container.className = 'hearts-container';
+    hearts.forEach(heart => container.appendChild(heart));
+    document.body.appendChild(container);
+
+    // Redirection après les animations
+    setTimeout(() => {
+      router.push('/success');
+    }, 2000);
   };
 
   return (
